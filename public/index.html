@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SentinelGuard AI — Antivirus Platform</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-icon">🛡️</span>
+      <div>
+        <div class="brand-name">SENTINELGUARD <span class="brand-ai">AI</span></div>
+        <div class="brand-sub">Antivirus Platform · Static Analysis · Behavioral Profiling</div>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <span class="pill" id="enginePill">Engine v1.0</span>
+      <span class="pill" id="clockPill">--:--:--</span>
+      <button class="guard-toggle" id="guardToggle" onclick="toggleGuard()">
+        <span class="guard-dot"></span><span id="guardToggleText">Guard OFF</span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab active" data-tab="dashboard">🛡️ Dashboard</button>
+    <button class="tab" data-tab="scan">📄 Scan File</button>
+    <button class="tab" data-tab="system">💾 System Scan</button>
+    <button class="tab" data-tab="processes">⚙️ Processes</button>
+    <button class="tab" data-tab="quarantine">🚪 Quarantine</button>
+    <button class="tab" data-tab="signatures">📚 Signatures</button>
+    <button class="tab" data-tab="console">📡 Console</button>
+  </nav>
+
+  <main id="main">
+    <!-- ================= DASHBOARD ================= -->
+    <section class="tab-panel active" id="tab-dashboard">
+      <div class="grid-2">
+        <div class="card shield-card">
+          <div class="shield-ring" id="shieldRing">
+            <div class="shield-inner" id="shieldInner">🛡️</div>
+          </div>
+          <div class="shield-status" id="shieldStatus">SYSTEM PROTECTED</div>
+          <div class="shield-detail" id="shieldDetail">All systems nominal. No threats detected.</div>
+          <div class="shield-meta">
+            <span>Guard: <b id="dashGuardState">OFF</b></span>
+            <span>Watch: <b>/watch</b></span>
+            <span>Uptime: <b id="dashUptime">0s</b></span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Threat Intelligence</div>
+          <div class="stats-grid" id="statsGrid"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Quick Actions</div>
+        <div class="quick-actions">
+          <button class="qa-btn" onclick="generateTestFile('eicar')">⚡ Generate EICAR Test</button>
+          <button class="qa-btn" onclick="generateTestFile('suspicious')">🧪 Generate Suspicious Demo</button>
+          <button class="qa-btn" onclick="generateTestFile('benign')">✅ Generate Benign Test</button>
+          <button class="qa-btn" onclick="goTo('scan')">📄 Upload &amp; Scan</button>
+          <button class="qa-btn" onclick="startSystemScan()">💾 Scan System</button>
+        </div>
+        <div class="hint">
+          <b>EICAR</b> is the industry-standard harmless test string used by antivirus vendors.
+          SentinelGuard detects it via signature + structural analysis.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Recent Scans <span class="card-title-right"><button class="link-btn" onclick="goTo('scan')">Open scanner</button></span></div>
+        <div id="recentScans"><div class="loading">Loading…</div></div>
+      </div>
+    </section>
+
+    <!-- ================= SCAN ================= -->
+    <section class="tab-panel" id="tab-scan">
+      <div class="card">
+        <div class="card-title">Upload &amp; Analyze</div>
+        <div class="dropzone" id="dropzone">
+          <div class="dz-icon">📤</div>
+          <div class="dz-text">Drag &amp; drop a file, or click to browse</div>
+          <div class="dz-sub">PE executables, ELF binaries, scripts, documents — fully analyzed on the server</div>
+          <input type="file" id="fileInput" multiple hidden>
+        </div>
+        <div class="scan-toolbar">
+          <button class="btn" onclick="document.getElementById('fileInput').click()">📂 Choose Files</button>
+          <button class="btn secondary" onclick="generateTestFile('eicar')">⚡ EICAR Test File</button>
+          <button class="btn secondary" onclick="generateTestFile('suspicious')">🧪 Suspicious Demo</button>
+          <button class="btn secondary" onclick="generateTestFile('pe')">🧬 PE Test Fixture</button>
+          <button class="btn secondary" onclick="generateTestFile('benign')">✅ Benign Test</button>
+          <span class="scan-note">Flagged files are automatically quarantined after scanning.</span>
+        </div>
+        <div id="scanQueue"></div>
+      </div>
+
+      <div class="card" id="resultCard" style="display:none">
+        <div class="card-title">Analysis Result</div>
+        <div id="resultContent"></div>
+      </div>
+    </section>
+
+    <!-- ================= SYSTEM ================= -->
+    <section class="tab-panel" id="tab-system">
+      <div class="card">
+        <div class="card-title">System Scan</div>
+        <div class="form-row">
+          <label>Scan roots (comma separated):</label>
+          <input type="text" id="scanRoots" value="/home/user, /tmp" class="input">
+        </div>
+        <div class="scan-toolbar">
+          <button class="btn" id="startSysScanBtn" onclick="startSystemScan()">▶ Start System Scan</button>
+          <span class="scan-note">Scans up to 3,000 files per run (≤64 MB each). Results are cached by hash.</span>
+        </div>
+        <div class="progress-wrap" id="sysProgressWrap" style="display:none">
+          <div class="progress"><div class="progress-bar" id="sysProgressBar"></div></div>
+          <div class="progress-label" id="sysProgressLabel">0 / 0</div>
+        </div>
+        <div class="verdict-summary" id="sysVerdictSummary" style="display:none"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Scan Results
+          <span class="card-title-right">
+            <select id="sysFilter" class="input small" onchange="renderSysResults()">
+              <option value="">All verdicts</option>
+              <option value="malicious">Malicious</option>
+              <option value="suspicious">Suspicious</option>
+              <option value="low">Low risk</option>
+              <option value="clean">Clean</option>
+            </select>
+          </span>
+        </div>
+        <div id="sysResults"><div class="loading">Run a system scan to see results.</div></div>
+      </div>
+    </section>
+
+    <!-- ================= PROCESSES ================= -->
+    <section class="tab-panel" id="tab-processes">
+      <div class="card">
+        <div class="card-title">Live Process Monitor
+          <span class="card-title-right">
+            <label class="switch"><input type="checkbox" id="procAutoRefresh" onchange="toggleProcAuto()"> Auto-refresh 5s</label>
+            <button class="btn small" onclick="refreshProcesses()">↻ Refresh</button>
+          </span>
+        </div>
+        <div class="hint">Every running process is enumerated from /proc and its executable is scanned against the signature &amp; heuristic engine (hash-cached).</div>
+        <div id="procTable"><div class="loading">Loading processes…</div></div>
+      </div>
+    </section>
+
+    <!-- ================= QUARANTINE ================= -->
+    <section class="tab-panel" id="tab-quarantine">
+      <div class="card">
+        <div class="card-title">Quarantine <span class="card-title-right" id="quarantineCount"></span></div>
+        <div id="quarantineList"><div class="loading">Loading…</div></div>
+      </div>
+    </section>
+
+    <!-- ================= SIGNATURES ================= -->
+    <section class="tab-panel" id="tab-signatures">
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title">Signature Database</div>
+          <div id="dbStats"></div>
+          <div class="form-row" style="margin-top:12px">
+            <input type="text" id="sigHashInput" class="input" placeholder="SHA256 / SHA1 / MD5 hash…">
+            <input type="text" id="sigThreatInput" class="input" placeholder="Threat name (optional)">
+            <button class="btn" onclick="addSignature()">➕ Add Signature</button>
+          </div>
+          <div class="hint" id="dbSource"></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Heuristic Rule Engine</div>
+          <input type="text" id="ruleFilter" class="input" placeholder="Filter rules by name, family or pattern…" oninput="renderRules()">
+          <div id="rulesTable" style="margin-top:12px"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Hash Signatures (<span id="sigCount">0</span>)</div>
+        <div id="signaturesTable"><div class="loading">Loading…</div></div>
+      </div>
+    </section>
+
+    <!-- ================= CONSOLE ================= -->
+    <section class="tab-panel" id="tab-console">
+      <div class="card">
+        <div class="card-title">Live Threat Console
+          <span class="card-title-right">
+            <select id="consoleFilter" class="input small" onchange="renderConsole()">
+              <option value="">All events</option>
+              <option value="scan">Scans</option>
+              <option value="guard">Guard</option>
+              <option value="quarantine">Quarantine</option>
+              <option value="system-scan">System Scan</option>
+              <option value="watch">Watch</option>
+              <option value="signatures">Signatures</option>
+              <option value="test-files">Test Files</option>
+            </select>
+            <label class="switch"><input type="checkbox" id="consolePause" onchange="consolePaused = this.checked"> Pause</label>
+          </span>
+        </div>
+        <div id="consoleLog" class="console"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FILE MODAL ================= -->
+  <div class="modal-overlay" id="modalOverlay" style="display:none" onclick="if(event.target===this)closeModal()">
+    <div class="modal">
+      <div class="modal-header">
+        <div id="modalTitle">File Analysis</div>
+        <button class="modal-close" onclick="closeModal()">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <div class="toast-wrap" id="toastWrap"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

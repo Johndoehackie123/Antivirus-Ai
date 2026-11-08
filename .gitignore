@@ -1,0 +1,11 @@
+node_modules/
+uploads/
+watch/*.com
+watch/*.exe
+watch/*.ps1
+quarantine/*
+!quarantine/.gitkeep
+data/
+*.log
+__pycache__/
+.DS_Store

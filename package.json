@@ -1,0 +1,14 @@
+{
+  "name": "sentinelguard-ai",
+  "version": "1.0.0",
+  "description": "SentinelGuard AI — a fully functional antivirus web platform with static analysis, heuristic detection, behavioral profiling, real-time file guard, system scanning and live process monitoring.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node scripts/seed_signatures.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}
