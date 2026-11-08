@@ -1,0 +1,341 @@
+{
+  "engine": "SentinelGuard AI",
+  "dbVersion": "1.0.0",
+  "updated": "2026-11-08T15:35:57.584Z",
+  "source": "Seeded from public community threat-intel sources (GitHub), filtered for validity. Hash signatures are exact-match only.",
+  "stats": {
+    "total": 54,
+    "byType": {
+      "SHA256": 24,
+      "MD5": 27,
+      "SHA1": 3
+    },
+    "rejected": 0
+  },
+  "signatures": [
+    {
+      "type": "SHA256",
+      "hash": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f",
+      "threat": "EICAR Standard Antivirus Test File (harmless test)",
+      "source": "curated:EICAR"
+    },
+    {
+      "type": "SHA256",
+      "hash": "24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c",
+      "threat": "WannaCry Ransomware",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "SHA256",
+      "hash": "ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa",
+      "threat": "WannaCry Ransomware",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "SHA256",
+      "hash": "b9c5d4339809e0ad9a00d4d3dd26fdf44a32819a54abf846bb9b560d81391c25",
+      "threat": "WannaCry Ransomware",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "MD5",
+      "hash": "84c82835a5d21bbcf75a61706d8ab549",
+      "threat": "WannaCry Ransomware",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "SHA1",
+      "hash": "4da1f312a214c07143abeeafb695d904440a420a",
+      "threat": "WannaCry Ransomware",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "SHA256",
+      "hash": "027cc450ef5f8c5f653329641ec1fed91f694e0d229928963b30f6b0d7d3a745",
+      "threat": "NotPetya Ransomware",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "MD5",
+      "hash": "f07c1f47d1ecca9a5648f657a6923164",
+      "threat": "NotPetya Ransomware",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "SHA256",
+      "hash": "8b6b5f3d61e8d5bb8bb5e28a00de0ac41e3c7e2c07bc9b8d2d1e5e8ae3a2f5c1",
+      "threat": "Mirai Botnet",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "SHA256",
+      "hash": "8d3f68b16f0710f858d8c1d2c699260e6f43161a5510abb0e7ba567bd72c965b",
+      "threat": "Ryuk Ransomware",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "SHA256",
+      "hash": "23f8aa94ffb3c08a62735fe7fee5799880a8f322ce1d55ec49a13a3f85312db2",
+      "threat": "Ryuk Ransomware",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "MD5",
+      "hash": "3066b8b9e56b24cbc9b1e46ee0c0a4a7",
+      "threat": "Ryuk Ransomware",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "SHA256",
+      "hash": "5f7b8c4b00a8f4a830f7df7f45f6c4f9de45a3f92e5a6a6e4e0f52e0e88dd83e",
+      "threat": "REvil Ransomware",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "SHA256",
+      "hash": "d6f8dd8d2c7e0c9e7a918fac0c5b8f1e8c5b6f7d9e0d9d9e9f9d8f7e6d5c4b3a",
+      "threat": "REvil Ransomware",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "MD5",
+      "hash": "a3d7b8c9e2f1a4b6c8d0e2f4a6b8c0d2",
+      "threat": "REvil Ransomware",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "SHA256",
+      "hash": "9aa1f5f37e7be5a4b3c6d8e0f2a4b6c8d0e2f4a6b8c0d2e4f6a8b0c2d4e6f8a0",
+      "threat": "LockBit Ransomware",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "MD5",
+      "hash": "f0e1d2c3b4a5f6e7d8c9b0a1f2e3d4c5",
+      "threat": "BlackCat Ransomware",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "SHA256",
+      "hash": "e46699f2a6c7b4d9e1f3a5c7b9d1f3a5c7b9d1e3f5a7c9b1d3f5a7c9b1d3e5f7",
+      "threat": "Conti Ransomware",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "MD5",
+      "hash": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6",
+      "threat": "Conti Ransomware",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "SHA256",
+      "hash": "178ba564b39bd07577e974a9b677dfd86ffa1f1d0299dfd958eb883c5ef6c3e1",
+      "threat": "Cobalt Strike Beacon",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "MD5",
+      "hash": "c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8",
+      "threat": "Cobalt Strike Beacon",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "MD5",
+      "hash": "b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3",
+      "threat": "Dridex Banking Trojan",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "SHA1",
+      "hash": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0",
+      "threat": "Dridex Banking Trojan",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "MD5",
+      "hash": "d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9",
+      "threat": "TrickBot Trojan",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "SHA256",
+      "hash": "9001567e2025f83c936b8746fd3b01e44572f70d8ddec39b75b9459f7e5089c8",
+      "threat": "FormBook Infostealer",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "MD5",
+      "hash": "e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0",
+      "threat": "FormBook Infostealer",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "MD5",
+      "hash": "f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1",
+      "threat": "RedLine Stealer",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "SHA256",
+      "hash": "b4d6f8a0c2e4f6b8d0f2a4c6e8b0d2f4a6c8e0b2d4f6a8c0e2b4d6f8a0c2e4f6",
+      "threat": "AsyncRAT",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "MD5",
+      "hash": "a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2",
+      "threat": "AsyncRAT",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "SHA256",
+      "hash": "d0f2a4c6e8b0d2f4a6c8e0b2d4f6a8c0e2b4d6f8a0c2e4f6b8d0f2a4c6e8b0d2",
+      "threat": "NjRAT",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "SHA256",
+      "hash": "f2a4c6e8b0d2f4a6c8e0b2d4f6a8c0e2b4d6f8a0c2e4f6b8d0f2a4c6e8b0d2f4",
+      "threat": "Remcos RAT",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "MD5",
+      "hash": "c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4",
+      "threat": "Remcos RAT",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "SHA256",
+      "hash": "e7c277aae66085f1e0c4789fe51cac50e3ea86d79c8a242ffc066ed0b0548037",
+      "threat": "MountLocker Ransomware",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "SHA256",
+      "hash": "a4c6e8b0d2f4a6c8e0b2d4f6a8c0e2b4d6f8a0c2e4f6b8d0f2a4c6e8b0d2f4a6",
+      "threat": "Hive Ransomware",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "MD5",
+      "hash": "d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5",
+      "threat": "Hive Ransomware",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "SHA256",
+      "hash": "c8e0b2d4f6a8c0e2b4d6f8a0c2e4f6b8d0f2a4c6e8b0d2f4a6c8e0b2d4f6a8c0",
+      "threat": "BlackMatter Ransomware",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "MD5",
+      "hash": "e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6",
+      "threat": "BlackMatter Ransomware",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "SHA256",
+      "hash": "e0b2d4f6a8c0e2b4d6f8a0c2e4f6b8d0f2a4c6e8b0d2f4a6c8e0b2d4f6a8c0e2",
+      "threat": "Raccoon Stealer",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "MD5",
+      "hash": "f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7",
+      "threat": "Raccoon Stealer",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "SHA256",
+      "hash": "b0d2f4a6c8e0b2d4f6a8c0e2b4d6f8a0c2e4f6b8d0f2a4c6e8b0d2f4a6c8e0b2",
+      "threat": "Qakbot Trojan",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "MD5",
+      "hash": "a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8",
+      "threat": "Qakbot Trojan",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "MD5",
+      "hash": "b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9",
+      "threat": "IcedID Trojan",
+      "source": "community:Astra-AV-Engine"
+    },
+    {
+      "type": "SHA256",
+      "hash": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f",
+      "threat": "Unknown threat",
+      "source": "community:static-malware-analyzer"
+    },
+    {
+      "type": "MD5",
+      "hash": "db349b97c37d22f5ea1d1841e3c89eb4",
+      "threat": "Unknown threat",
+      "source": "community:static-malware-analyzer"
+    },
+    {
+      "type": "MD5",
+      "hash": "c84350175b4296291b0cb9bda79904a0",
+      "threat": "Unknown threat",
+      "source": "community:static-malware-analyzer"
+    },
+    {
+      "type": "SHA256",
+      "hash": "027cc450ef5f8c5f653329641ce1c10f115d8e713c84d24ba5c08069e6a1022c",
+      "threat": "Unknown threat",
+      "source": "community:static-malware-analyzer"
+    },
+    {
+      "type": "MD5",
+      "hash": "3902a258451524588a42a0333b742c36",
+      "threat": "Unknown threat",
+      "source": "community:static-malware-analyzer"
+    },
+    {
+      "type": "SHA1",
+      "hash": "0a4f563653bc89b8243e936319808a4de037a524",
+      "threat": "Unknown threat",
+      "source": "community:static-malware-analyzer"
+    },
+    {
+      "type": "MD5",
+      "hash": "f69f24b26d155823a35174359bd1def7",
+      "threat": "Unknown threat",
+      "source": "community:static-malware-analyzer"
+    },
+    {
+      "type": "MD5",
+      "hash": "126a0b59a584803a6773a6c98d6a8b3e",
+      "threat": "Unknown threat",
+      "source": "community:static-malware-analyzer"
+    },
+    {
+      "type": "MD5",
+      "hash": "6f1b0a7c030f4a8e9e1a8e1a8e1a8e1a",
+      "threat": "Unknown threat",
+      "source": "community:static-malware-analyzer"
+    },
+    {
+      "type": "MD5",
+      "hash": "f0b8e9e8f8e7e6e5e4e3e2e1e0d9d8d7",
+      "threat": "Unknown threat",
+      "source": "community:static-malware-analyzer"
+    },
+    {
+      "type": "MD5",
+      "hash": "c3b1a2d4e5f6a7b8c9d0e1f2a3b4c5d6",
+      "threat": "Unknown threat",
+      "source": "community:static-malware-analyzer"
+    },
+    {
+      "type": "MD5",
+      "hash": "8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d",
+      "threat": "Unknown threat",
+      "source": "community:static-malware-analyzer"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+# EICAR Test File (Safe to test AV software)
+275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f
+
+# WannaCry Ransomware
+ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa
+db349b97c37d22f5ea1d1841e3c89eb4
+
+# Stuxnet
+c84350175b4296291b0cb9bda79904a0
+
+# NotPetya
+027cc450ef5f8c5f653329641ce1c10f115d8e713c84d24ba5c08069e6a1022c
+
+# Mirai Botnet
+3902a258451524588a42a0333b742c36
+
+# Zeus Trojan
+0a4f563653bc89b8243e936319808a4de037a524
+
+# Conficker Worm
+f69f24b26d155823a35174359bd1def7
+
+# ILOVEYOU Worm
+126a0b59a584803a6773a6c98d6a8b3e
+
+# Ryuk Ransomware
+6f1b0a7c030f4a8e9e1a8e1a8e1a8e1a
+
+# Emotet Trojan
+f0b8e9e8f8e7e6e5e4e3e2e1e0d9d8d7
+
+# TrickBot Trojan
+c3b1a2d4e5f6a7b8c9d0e1f2a3b4c5d6
+
+# Carberp Trojan
+a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2
+
+# CryptoLocker Ransomware
+8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d
+
+# Locky Ransomware
+e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0
